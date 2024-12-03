@@ -6,7 +6,7 @@ use Dao\Table;
 
 class FuncionesRoles extends Table
 {
-    public static function getFuncionesRoles()
+    public static function obtenerFuncionesRoles()
     {
         $sqlstr = "SELECT * FROM funciones_roles";
         $params = [];
@@ -14,16 +14,16 @@ class FuncionesRoles extends Table
         return $registros;
     }
         
-    public static function obtenerPorId($fncod)
+    public static function obtenerPorId($id)
     {
-        $sqlstr = "SELECT * FROM funciones_roles WHERE fncod = :fncod";
-        $params = ['fncod' => $fncod];
+        $sqlstr = "SELECT * FROM funciones_roles WHERE id = :id";
+        $params = ['id' => $id];
         $registros = self::obtenerUnRegistro($sqlstr, $params);
         return $registros;
     }
 
-    public static function agregarFuncionesRoles($rolescod, $fncod, $fnrolest, $fnexp){
-	
+    public static function agregarFuncionesRoles($rolescod, $fncod, $fnrolest, $fnexp)
+    {
         $sqlstr = "INSERT INTO funciones_roles (
             rolescod, 
             fncod, 
@@ -37,6 +37,22 @@ class FuncionesRoles extends Table
         $params = ['rolescod' => $rolescod, 'fncod' => $fncod, 'fnrolest' => $fnrolest, 'fnexp' => $fnexp];
         $registros = self::executeNonQuery($sqlstr, $params);
         return $registros;
-    
+    }
+
+        public static function actualizarFunciones_Roles($rolescod, $fncod, $fnrolest, $fnexp)
+        {
+            $sqlstr = "UPDATE funciones_roles SET 
+            rolescod = :rolescod, 
+            fncod = :fncod, 
+            fnrolest = :fnrolest, 
+            fnexp = :fnexp 
+            WHERE rolescod = :rolescod";
+            $params = [
+                'rolescod' => $rolescod, 
+                'fncod' => $fncod, 
+                'fnrolest' => $fnrolest, 
+                'fnexp' => $fnexp];
+            $registros = self::executeNonQuery($sqlstr, $params);
+            return $registros;
         }
 }

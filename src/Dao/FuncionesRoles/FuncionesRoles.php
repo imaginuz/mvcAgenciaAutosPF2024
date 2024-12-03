@@ -37,6 +37,21 @@ class FuncionesRoles extends Table
         $params = ['rolescod' => $rolescod, 'fncod' => $fncod, 'fnrolest' => $fnrolest, 'fnexp' => $fnexp];
         $registros = self::executeNonQuery($sqlstr, $params);
         return $registros;
+    }
+
+    public static function actualizarFuncionesRoles($rolescod, $fncod, $fnrolest, $fnexp){
+	
+        $sqlstr = "UPDATE funciones_roles SET rolescod = :rolescod, fncod = :fncod, fnrolest = :fnrolest, fnexp = :fnexp WHERE rolescod = :rolescod";
+        $params = ['rolescod' => $rolescod, 'fncod' => $fncod, 'fnrolest' => $fnrolest, 'fnexp' => $fnexp];
+        $registros = self::executeNonQuery($sqlstr, $params);
+        return $registros;
     
+	}
+
+    public static function elimianarFuncionesRoles($id){
+        $sqlstr= "DELETE  FROM funciones_roles WHERE rolescod = :id";
+            $params = ['id'=>$id];
+            $registros = self::executeNonQuery($sqlstr, $params);
+            return $registros;
         }
 }

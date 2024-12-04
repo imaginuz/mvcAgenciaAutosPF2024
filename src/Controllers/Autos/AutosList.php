@@ -1,6 +1,6 @@
 <?php
 
-namespace Autos\Autos;
+namespace Controllers\Autos;
 
 use Controllers\PublicController;
 use Views\Renderer;
@@ -24,7 +24,7 @@ class AutosList extends PublicController{
             "autos" => $viewAutos
         ];
 
-        Renderer::render('autos/autos',$viewData);
+        Renderer::render('autos/AutosList',$viewData);
     }
 
 }

@@ -258,7 +258,7 @@
 <body>
 
     <section id="nosotros" class="about">
-        div 
+        <div>
         <h1>Nosotros</h1>
        
               <div class="page-card">

@@ -52,7 +52,7 @@ class AutosForm extends PublicController {
             }
         }
         $this->generarViewData();
-        Renderer::render('autos/AutosForm', $this->viewData);
+        Renderer::render('autos/AutoForm', $this->viewData);
     }
 
     private function inicializarForm(){

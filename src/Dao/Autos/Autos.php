@@ -29,7 +29,7 @@ class Autos extends Table{
         return $auto;
     }
     public static function agregarAutos($auto){
-        
+        echo count($auto);
         unset($autos['id_auto']);
         
       

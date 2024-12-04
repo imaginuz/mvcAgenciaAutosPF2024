@@ -7,7 +7,7 @@
     <section class="row my-4">
     <form class="col-12 col-m-6 offset-m-3 depth-1" action="index.php?page=Autos-AutosForm&mode={{mode}}&id_auto={{id_auto}}" method="POST" >
         <input type="hidden" name="id_auto" value="{{id_auto}}">
-        <input type="hidden" name="xsrftk" value="{{xsrftk}}">
+        <input type="hidden" name="xssToken" value="{{~xssToken}}">
         <input type="hidden" name="mode" value="{{mode}}">
         
         <div class="row my-4">

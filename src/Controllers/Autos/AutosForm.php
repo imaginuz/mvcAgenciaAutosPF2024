@@ -1,6 +1,6 @@
 <?php
 
-namespace Autos\Autos;
+namespace Controllers\Autos;
 use Controllers\PublicController;
 use Views\Renderer;
 use Utilities\Site;
@@ -52,11 +52,11 @@ class AutosForm extends PublicController {
             }
         }
         $this->generarViewData();
-        Renderer::render('autos/autos_form', $this->viewData);
+        Renderer::render('autos/AutosForm', $this->viewData);
     }
 
     private function inicializarForm(){
-        if(isset($_GET["mode"]) && isset($this->modeDscArr[$_GET["mode"]])){
+        if(isset($_GET["mode"]) && isset($this->modeArr[$_GET["mode"]])){
             $this->mode = $_GET["mode"];
         } else {
             Site::redirectToWithMsg("index.php?page=Autos-AutosList","Hubo un error en el guardado, Reintente");

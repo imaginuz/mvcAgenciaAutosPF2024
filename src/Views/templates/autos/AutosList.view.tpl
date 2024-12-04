@@ -2,7 +2,7 @@
     <section class="depth-1 px-4 py-4">
         <h2>Lista de Autos</h2>
         <section class="grid">
-            <form action="index.php?page=Autos-Autos" method="post" class="row">
+            <form action="index.php?page=Autos-AutosForm" method="post" class="row">
                 <input class="col-8" type="text" name="search" placeholder="Buscar por descripcion" value="{{search}}">
                 <button class="col-4" type="submit"><i class="fa-solid fa-magnifying-glass"></i> &nbsp;Buscar</button>
             </form>

@@ -19,95 +19,96 @@
             <label class="col-4" for="marca">Marca:</label>
             <input class="col-8" type="text" name="marca" id="marca" value="{{marca}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_dsc}}
-                    {{foreach error_dsc}}
+                {{if error_marca}}
+                    {{foreach error_marca}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_dsc}}
-                {{endif error_dsc}}
+                    {{endfor error_marca}}
+                {{endif error_marca}}
             {{endwith errors}}
+
         </div>
         <div class="row my-4">
             <label class="col-4" for="modelo">Modelo:</label>
             <input class="col-8" type="text" name="modelo" id="modelo" value="{{modelo}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_est}}
-                    {{foreach error_est}}
+                {{if error_modelo}}
+                    {{foreach error_modelo}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_est}}
-                {{endif error_est}}
+                    {{endfor error_modelo}}
+                {{endif error_modelo}}
             {{endwith errors}}
         </div>
         <div class="row my-4">
-            <label class="col-4" for="anio">Añio:</label>
+            <label class="col-4" for="anio">Año:</label>
             <input class="col-8" type="text" name="anio" id="anio" value="{{anio}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_anio}}
+                    {{foreach error_anio}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_anio}}
+                {{endif error_anio}}
             {{endwith errors}}
         </div>
 
   <div class="row my-4">
-            <label class="col-4" for="anio">Registro:</label>
+            <label class="col-4" for="registro">Registro:</label>
             <input class="col-8" type="text" name="registro" id="registro" value="{{registro}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_registro}}
+                    {{foreach error_registro}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_registro}}
+                {{endif error_registro}}
             {{endwith errors}}
         </div>
 
 
 <div class="row my-4">
-            <label class="col-4" for="anio">Estado:</label>
+            <label class="col-4" for="estado">Estado:</label>
             <input class="col-8" type="text" name="estado" id="estado" value="{{estado}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_estado}}
+                    {{foreach error_estado}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_estado}}
+                {{endif error_estado}}
             {{endwith errors}}
         </div>
 
 <div class="row my-4">
-            <label class="col-4" for="anio">Precio:</label>
+            <label class="col-4" for="precio">Precio:</label>
             <input class="col-8" type="number" name="precio" id="precio" value="{{precio}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_precio}}
+                    {{foreach error_precio}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_precio}}
+                {{endif error_precio}}
             {{endwith errors}}
         </div>
 
 
 <div class="row my-4">
-            <label class="col-4" for="anio">Precio Min:</label>
+            <label class="col-4" for="precio_min">Precio Min:</label>
             <input class="col-8" type="text" name="precio_min" id="precio_min" value="{{precio_min}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_precio_min}}
+                    {{foreach error_precio_min}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_precio_min}}
+                {{endif error_precio_min}}
             {{endwith errors}}
         </div>
 
 <div class="row my-4">
-            <label class="col-4" for="anio">Imagen Auto:</label>
+            <label class="col-4" for="autoImgUrl">Imagen Auto:</label>
             <input class="col-8" type="text" name="autoImgUrl" id="autoImgUrl" value="{{autoImgUrl}}" required {{isReadOnly}}>
             {{with errors}}
-                {{if error_typ}}
-                    {{foreach error_typ}}
+                {{if error_autoImgUrl}}
+                    {{foreach error_autoImgUrl}}
                         <div class="col-12 error">{{this}}</div>
-                    {{endfor error_typ}}
-                {{endif error_typ}}
+                    {{endfor error_autoImgUrl}}
+                {{endif error_autoImgUrl}}
             {{endwith errors}}
         </div>
 

@@ -49,7 +49,7 @@
     </table>
     <!-- Botón para realizar la compra -->
     <div class="text-center mt-4">
-        <a href="index.php?page=Carrito-CarritoPagar" class="btn btn-primary">
+        <a href="index.php?page=Checkout-Checkout" class="btn btn-primary">
             <i class="fa-solid fa-credit-card"></i> &nbsp; Realizar la compra
         </a>
     </div>

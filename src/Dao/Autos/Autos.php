@@ -6,16 +6,6 @@ use Dao\Table;
 
 class Autos extends Table{
 
-    private $id_auto; 
-    private $marca;              
-    private $modelo;         
-    private $anio;                     
-    private $registro;   
-    private $estado; 
-    private $precio;         
-    private $precio_min;       
-    private $autoImgUrl;   
-
     public static function obtenerAutos()
     {
         $sqlstr = 'SELECT * FROM autos;';

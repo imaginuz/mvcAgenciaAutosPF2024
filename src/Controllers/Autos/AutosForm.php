@@ -2,13 +2,13 @@
 
 namespace Controllers\Autos;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Views\Renderer;
 use Utilities\Site;
 use Dao\Autos\Autos;
 use Utilities\Validators;
 
-class AutosForm extends PublicController
+class AutosForm extends PrivateController
 {
 
     private $viewData = [];
@@ -61,6 +61,12 @@ class AutosForm extends PublicController
     {
         if (isset($_GET["mode"]) && isset($this->modeArr[$_GET["mode"]])) {
             $this->mode = $_GET["mode"];
+            if ($this->mode !== 'DSP'){
+                if(!$this->isFeatureAutorized("autos_".$this->mode."_enabled")){
+                    Site::redirectToWithMsg("index.php?page=Autos-AutosList", "No tiene permisos para realizar esta accion");
+                    die();
+                }
+            }
         } else {
             Site::redirectToWithMsg("index.php?page=Autos-AutosList", "Hubo un error en el guardado, Reintente");
             die();

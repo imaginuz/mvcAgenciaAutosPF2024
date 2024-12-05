@@ -20,9 +20,13 @@
                     <th>Precio</th>
                     <th>Precio_Min</th>
                     <th>autoImgUrl</th>
-                    <th><a href="index.php?page=Autos-AutosForm&mode=INS">
+                    <th>
+                        {{if INS_enable}}
+                        <a href="index.php?page=Autos-AutosForm&mode=INS">
                         <i class="fa-solid fa-file-circle-plus"></i>
-                        &nbsp; Nueva Funcion</a></th>
+                        &nbsp; Nueva Funcion</a>
+                        {{endif INS_enable}}
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -40,15 +44,20 @@
                             <img src="{{autoImgUrl}}" alt="Imagen del auto" style="width: 100px; height: auto;">
                         </td>
                         <td class="center">
+                            {{if ~UPD_enable}}
                             <a href="index.php?page=Autos-AutosForm&mode=UPD&id_auto={{id_auto}}">
                                 <i class="fa-solid fa-pen"></i> &nbsp; Editar
                             </a>
+                            {{endif ~UPD_enable}}
+
                             &nbsp;
                             &nbsp;
+                            {{if ~DEL_enable}}
                             <a href="index.php?page=Autos-AutosForm&mode=DEL&id_auto={{id_auto}}">
                                 <i class="fa-solid fa-trash-can"></i> &nbsp;
                                 Eliminar
                             </a>
+                            {{endif ~DEL_enable}}
                         </td>
                     </tr>
                 {{endfor autos}}

@@ -87,7 +87,7 @@
             </form>
             <h3>{{marca}} {{modelo}}</h3>
             <p>Año: {{anio}}</p>
-            <p class="price">LP. {{precio}}</p>
+            <p class="price">$ {{precio}}</p>
             <div class="card-buttons">
                 <form method="GET" action="index.php">
                     <input type="hidden" name="page" value="Tienda-TiendaDetalles">

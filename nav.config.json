@@ -6,6 +6,11 @@
       "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Catalogo de Autos"
     },
     {
+      "id": "Menu_Carrito",
+      "nav_url": "index.php?page=Carrito_CarritoList",
+      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Carrito"
+    },
+    {
       "id": "Menu_SignIn",
       "nav_url": "index.php?page=Sec_Login",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Iniciar Sesión"
@@ -23,7 +28,7 @@
       "nav_label": "Carretilla de Compra"
     },
     {
-      "id":"Autos_Lista",
+      "id":"Menu_Autos",
       "nav_url": "index.php?page=Autos_AutosList",
       "nav_label": "Lista de Autos"
     }

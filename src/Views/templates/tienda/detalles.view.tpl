@@ -128,7 +128,7 @@
                     {{endwith auto}}
 
                     <div class="add-to-cart">
-                        <button type="submit" class="btn">Agregar al carrito</button>
+                        <button type="submit" class="btn" name="agregar_carrito">Agregar al carrito</button>
                     </div>
             </form>
             <div class="back-btn">

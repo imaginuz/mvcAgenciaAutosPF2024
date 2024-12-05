@@ -68,7 +68,7 @@
     }
   </style>
 
-  <h2>Carrito de Compras</h2>
+  <h2>Finalizar Compra</h2>
   <table class="table">
     <thead>
       <tr>

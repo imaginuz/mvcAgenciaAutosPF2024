@@ -1,4 +1,5 @@
-Introducción al Proyecto
+Introducción al Proyecto: 
+
 El proyecto se enfoca en desarrollar un sistema de gestión para una agencia automotriz, diseñado para facilitar el manejo de información sobre vehículos. A través de una interfaz web dinámica, los usuarios pueden:
 
 Registrar y editar información de autos:

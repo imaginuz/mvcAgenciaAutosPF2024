@@ -23,6 +23,16 @@
   ],
   "private": [
     {
+      "id": "Menu_Tienda",
+      "nav_url": "index.php?page=Tienda_TiendaPage",
+      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Catalogo de Autos"
+    },
+    {
+      "id": "Menu_Carrito",
+      "nav_url": "index.php?page=Carrito_CarritoList",
+      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Carrito"
+    },
+    {
       "id":"Menu_PaymentCheckout",
       "nav_url": "index.php?page=Checkout_Checkout",
       "nav_label": "Carretilla de Compra"

@@ -78,22 +78,19 @@
     <section class="grid-container">
         {{foreach autos}}
         <div class="card">
-            <!-- Imagen como boton -->
             <form method="GET" action="index.php">
-                <input type="hidden" name="controller" value="AutoDetail">
+                <input type="hidden" name="page" value="Tienda-TiendaDetalles">
                 <input type="hidden" name="id" value="{{id_auto}}">
                 <button type="submit" class="button">
                     <img src="{{autoImgUrl}}" alt="{{marca}} {{modelo}}">
                 </button>
             </form>
-            <!-- Información del auto -->
             <h3>{{marca}} {{modelo}}</h3>
             <p>Año: {{anio}}</p>
             <p class="price">LP. {{precio}}</p>
-            <!-- Botón de acción hacia ... -->
             <div class="card-buttons">
                 <form method="GET" action="index.php">
-                    <input type="hidden" name="controller" value="AutoDetail">
+                    <input type="hidden" name="page" value="Tienda-TiendaDetalles">
                     <input type="hidden" name="id" value="{{id_auto}}">
                     <button type="submit">Ver Detalles</button>
                 </form>

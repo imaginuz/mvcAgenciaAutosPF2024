@@ -1,6 +1,11 @@
 {
   "public": [
     {
+      "id": "Menu_Tienda",
+      "nav_url": "index.php?page=Tienda_TiendaPage",
+      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Catalogo de Autos"
+    },
+    {
       "id": "Menu_SignIn",
       "nav_url": "index.php?page=Sec_Login",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Iniciar Sesión"
@@ -9,12 +14,8 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=Sec_Register",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Crear Cuenta"
-    },
-    {
-      "id": "Menu_Tienda",
-      "nav_url": "index.php?page=Tienda_TiendaPage",
-      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Catalogo de Autos"
     }
+    
   ],
   "private": [
     {

@@ -109,3 +109,14 @@ CREATE TABLE
         bitusuario bigint(18) DEFAULT NULL,
         PRIMARY KEY (bitacoracod)
     ) ENGINE = InnoDB AUTO_INCREMENT = 10 DEFAULT CHARSET = utf8;   
+
+CREATE TABLE carrito (
+    id_carrito INT AUTO_INCREMENT PRIMARY KEY,
+    usercod BIGINT(10) NOT NULL,
+    id_auto INT NOT NULL,
+    cantidad INT NOT NULL DEFAULT 1,
+    fecha_agregado DATETIME NOT NULL DEFAULT NOW(),
+    estado ENUM('pendiente', 'comprado') DEFAULT 'pendiente',
+    FOREIGN KEY (usercod) REFERENCES usuario(usercod),
+    FOREIGN KEY (id_auto) REFERENCES autos(id_auto)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -6,7 +6,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: url(https://imagenes.eleconomista.com.mx/files/image_1200_600/uploads/2022/03/01/66e453337b663.jpeg)no-repeat center center/cover;
+      background: url(https://wallpapers.com/images/hd/shiny-black-sports-cars-6191f2yq38g0wroe.jpg)no-repeat center center/cover;
       margin: 0;
 
     }
@@ -16,8 +16,8 @@
       border-radius: 12px;
       box-shadow: 0 4px 2px rgba(178, 200, 237, 0.1);
       background-color: rgba(0, 0, 0, 0.8);
-      
-      
+
+
     }
 
     h1 {
@@ -43,7 +43,7 @@
       border-radius: 4px;
       padding: 0.75rem;
       font-size: 0.875rem;
-      width: 60%;
+      width: 100%;
       color: #030303;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -57,7 +57,7 @@
 
 
     button.primary {
-      background-color: #c73319;
+      background-color: #3684cc;
       color: #ffffff;
       border: none;
       border-radius: 4px;
@@ -68,14 +68,14 @@
       transition: background-color 0.2s;
     }
 
-  button.primary {
-  display: block;
-  margin: 0 auto;
-}
+    button.primary {
+      display: block;
+      margin: 0 auto;
+    }
 
     button.primary:hover {
-      background-color: #1669c1;
-    }
+      background-color: #1669c1;
+    }
 
     /* Errores */
     .error {
@@ -108,8 +108,10 @@
   <form class="grid" method="post" action="index.php?page=sec_login{{if redirto}}&redirto={{redirto}}{{endif redirto}}">
     <section class="depth-1 row col-12 col-m-8 offset-m-2 col-xl-6 offset-xl-3">
       <h1 class="col-12">Inicio de Sesion</h1>
-<br>
-<br>
+      <br>
+      <br>
+      <br>
+      <br>
 
       <div class="row">
         <label class="col-12 col-m-4 flex align-center" for="txtEmail">Correo Electrónico</label>

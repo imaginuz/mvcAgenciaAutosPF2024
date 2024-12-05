@@ -5,55 +5,80 @@
     <style>
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
             padding: 20px;
+            justify-content: center;
+            max-width: 1300px;
+            margin: 0 auto;
         }
+
         .card {
             border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
+            border-radius: 12px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            padding: 15px;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
         .card img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .card p {
+            margin: 8px 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .card .price {
+            font-size: 1.8rem;
+            color: #28a745;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card-buttons {
+            margin-top: 15px;
+        }
+
+        .card-buttons button {
+            border: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 1rem;
         }
-        .card h3 {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .button {
-            border: none;
-            background: none;
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            font-size: inherit;
-        }
-        .card a {
-            text-decoration: none;
-            color: inherit;
+
+        .card-buttons button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
-<section class="container-l WWList">
-    <section class="depth-1 px-4 py-4">
-        <h2>Lista de Autos</h2>
-        <section class="grid">
-            <form action="index.php?page=Tienda-TiendaPage" method="post" class="row">
-                <input class="col-8" type="text" name="search" placeholder="Buscar por descripcion" value="{{search}}">
-                <button class="col-4" type="submit"><i class="fa-solid fa-magnifying-glass"></i> &nbsp;Buscar</button>
-            </form>
-        </section>
-    </section>
+
+<body>
+    <section class="grid-container">
         {{foreach autos}}
         <div class="card">
+            <!-- Imagen como boton -->
             <form method="GET" action="index.php">
                 <input type="hidden" name="controller" value="AutoDetail">
                 <input type="hidden" name="id" value="{{id_auto}}">
@@ -61,17 +86,19 @@
                     <img src="{{autoImgUrl}}" alt="{{marca}} {{modelo}}">
                 </button>
             </form>
-            <form method="GET" action="index.php">
-                <input type="hidden" name="controller" value="AutoDetail">
-                <input type="hidden" name="id" value="{{id_auto}}">
-                <button type="submit" class="button">
-                    <h3>{{marca}} {{modelo}}</h3>
-                </button>
-            </form>
+            <!-- Información del auto -->
+            <h3>{{marca}} {{modelo}}</h3>
             <p>Año: {{anio}}</p>
-            <p>Precio: LP. {{precio}}</p>
+            <p class="price">LP. {{precio}}</p>
+            <!-- Botón de acción hacia ... -->
+            <div class="card-buttons">
+                <form method="GET" action="index.php">
+                    <input type="hidden" name="controller" value="AutoDetail">
+                    <input type="hidden" name="id" value="{{id_auto}}">
+                    <button type="submit">Ver Detalles</button>
+                </form>
+            </div>
         </div>
         {{endfor autos}}
-    </div>
+    </section>
 </body>
-</html>

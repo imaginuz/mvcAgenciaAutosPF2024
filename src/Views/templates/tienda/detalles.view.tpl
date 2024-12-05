@@ -89,7 +89,8 @@
         }
 
         .back-btn {
-            margin-top: 20px;
+            margin-top: 1px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
@@ -130,6 +131,7 @@
                     <div class="add-to-cart">
                         <button type="submit" class="btn" name="agregar_carrito">Agregar al carrito</button>
                     </div>
+                    
             </form>
             <div class="back-btn">
                 <a href="index.php?page=Tienda-TiendaPage" class="btn">Regresar a la lista de autos</a>

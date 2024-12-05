@@ -43,8 +43,8 @@ class Autos extends Table{
             return self::executeNonQuery($sqlstr, $auto);
         }
 
-    public static function eliminarAuto($auto){
+    public static function eliminarAuto($id_auto){
         $sqlstr = "delete from autos where id_auto = :id_auto;";
-        return self::executeNonQuery($sqlstr, ["id_auto"=>$auto]);
+        return self::executeNonQuery($sqlstr, ["id_auto"=>$id_auto]);
     }
 }

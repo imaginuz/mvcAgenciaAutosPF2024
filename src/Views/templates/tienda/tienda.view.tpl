@@ -54,7 +54,6 @@
     </section>
         {{foreach autos}}
         <div class="card">
-            <!-- Imagen como botón -->
             <form method="GET" action="index.php">
                 <input type="hidden" name="controller" value="AutoDetail">
                 <input type="hidden" name="id" value="{{id_auto}}">
@@ -62,7 +61,6 @@
                     <img src="{{autoImgUrl}}" alt="{{marca}} {{modelo}}">
                 </button>
             </form>
-            <!-- Nombre como botón -->
             <form method="GET" action="index.php">
                 <input type="hidden" name="controller" value="AutoDetail">
                 <input type="hidden" name="id" value="{{id_auto}}">

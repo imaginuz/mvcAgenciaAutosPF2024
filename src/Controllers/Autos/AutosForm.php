@@ -162,7 +162,7 @@ class AutosForm extends PublicController
                 }
                 break;
             case 'DEL':
-                $result = Autos::eliminarAuto($this->auto);
+                $result = Autos::eliminarAuto($this->auto['id_auto']);
                 if ($result) {
                     Site::redirectToWithMsg("index.php?page=Autos-AutosList", "Auto Eliminado satisfactoriamente");
                 }

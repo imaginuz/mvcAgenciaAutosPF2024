@@ -90,10 +90,10 @@ class AutosForm extends PublicController
             ($this->viewData["mode"] === 'DEL'
                 || $this->viewData["mode"] === 'DSP'
             ) ? 'readonly' : '';
-        foreach (["modelo", "marca", "anio", "registro", "estado", "precio", "precio_min", "autoImgUrl"] as $field) {
-            $this->viewData[$field . '_error'] = $this->errors[$field] ?? [];
-            $this->viewData[$field . '_haserror'] = isset($this->errors[$field]) ? count($this->errors[$field]) : 0;
-        }
+            foreach($this->errors as $context=>$errores){
+                $this->viewData[$context. '_error'] = $errores;
+                $this->viewData[$context. '_haserror']=count($errores);
+            }
         $this->viewData["showConfirm"] = ($this->viewData["mode"] != 'DSP');
         $this->generateAntiXSSToken();
         $this->viewData["xssToken"] = $this->xssToken;

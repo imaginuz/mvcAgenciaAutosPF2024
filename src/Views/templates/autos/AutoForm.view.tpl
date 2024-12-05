@@ -18,98 +18,113 @@
         <div class="row my-4">
             <label class="col-4" for="marca">Marca:</label>
             <input class="col-8" type="text" name="marca" id="marca" value="{{marca}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_marca}}
-                    {{foreach error_marca}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_marca}}
-                {{endif error_marca}}
-            {{endwith errors}}
-
+            {{if ~marca_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~marca_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~marca_error}}
+                    </ul>
+                </div>
+            {{endif ~marca_haserror}}
         </div>
         <div class="row my-4">
             <label class="col-4" for="modelo">Modelo:</label>
             <input class="col-8" type="text" name="modelo" id="modelo" value="{{modelo}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_modelo}}
-                    {{foreach error_modelo}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_modelo}}
-                {{endif error_modelo}}
-            {{endwith errors}}
+            {{if ~modelo_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~modelo_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~modelo_error}}
+                    </ul>
+                </div>
+            {{endif ~modelo_haserror}}
         </div>
         <div class="row my-4">
             <label class="col-4" for="anio">Año:</label>
             <input class="col-8" type="text" name="anio" id="anio" value="{{anio}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_anio}}
-                    {{foreach error_anio}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_anio}}
-                {{endif error_anio}}
-            {{endwith errors}}
+            {{if ~anio_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~anio_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~anio_error}}
+                    </ul>
+                </div>
+            {{endif ~anio_haserror}}
         </div>
 
-  <div class="row my-4">
+        <div class="row my-4">
             <label class="col-4" for="registro">Registro:</label>
             <input class="col-8" type="text" name="registro" id="registro" value="{{registro}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_registro}}
-                    {{foreach error_registro}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_registro}}
-                {{endif error_registro}}
-            {{endwith errors}}
+            {{if ~registro_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~registro_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~registro_error}}
+                    </ul>
+                </div>
+            {{endif ~registro_haserror}}
         </div>
 
 
-<div class="row my-4">
+        <div class="row my-4">
             <label class="col-4" for="estado">Estado:</label>
             <input class="col-8" type="text" name="estado" id="estado" value="{{estado}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_estado}}
-                    {{foreach error_estado}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_estado}}
-                {{endif error_estado}}
-            {{endwith errors}}
+            {{if ~estado_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~estado_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~estado_error}}
+                    </ul>
+                </div>
+            {{endif ~estado_haserror}}
         </div>
 
-<div class="row my-4">
+        <div class="row my-4">
             <label class="col-4" for="precio">Precio:</label>
             <input class="col-8" type="number" name="precio" id="precio" value="{{precio}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_precio}}
-                    {{foreach error_precio}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_precio}}
-                {{endif error_precio}}
-            {{endwith errors}}
+            {{if ~precio_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~precio_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~precio_error}}
+                    </ul>
+                </div>
+            {{endif ~precio_haserror}}
         </div>
 
 
-<div class="row my-4">
+        <div class="row my-4">
             <label class="col-4" for="precio_min">Precio Min:</label>
             <input class="col-8" type="text" name="precio_min" id="precio_min" value="{{precio_min}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_precio_min}}
-                    {{foreach error_precio_min}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_precio_min}}
-                {{endif error_precio_min}}
-            {{endwith errors}}
+            {{if ~precio_min_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~precio_min_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~precio_min_error}}
+                    </ul>
+                </div>
+            {{endif ~precio_min_haserror}}
         </div>
 
-<div class="row my-4">
+        <div class="row my-4">
             <label class="col-4" for="autoImgUrl">Imagen Auto:</label>
             <input class="col-8" type="text" name="autoImgUrl" id="autoImgUrl" value="{{autoImgUrl}}" required {{isReadOnly}}>
-            {{with errors}}
-                {{if error_autoImgUrl}}
-                    {{foreach error_autoImgUrl}}
-                        <div class="col-12 error">{{this}}</div>
-                    {{endfor error_autoImgUrl}}
-                {{endif error_autoImgUrl}}
-            {{endwith errors}}
+            {{if ~autoImgUrl_haserror}}
+                <div class = "error">
+                    <ul>
+                        {{foreach ~autoImgUrl_error}}
+                            <li>{{this}}</li>
+                        {{endfor ~autoImgUrl_error}}
+                    </ul>
+                </div>
+            {{endif ~autoImgUrl_haserror}}
         </div>
 
         <div class="row flex-end">

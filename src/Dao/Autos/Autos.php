@@ -29,19 +29,19 @@ class Autos extends Table{
         return $auto;
     }
     public static function agregarAutos($auto){
-        echo count($auto);
-        unset($autos['id_auto']);
-        
-      
-            $sqlstr = ' insert into autos (
-            marca, modelo,  anio, registro, 
-            estado, precio, precio_min, autoImgUrl,)
-            values
-            (
-            :marca, :modelo, :anio, :registro, :estado, :precio, :precio_min, :autoImgUrl, 
-    
+        unset($auto['id_auto']);
+        unset($auto['creado']);
+        unset($auto['actualizado']);
+        $sqlstr = 'INSERT INTO autos (
+            marca, modelo, anio, registro, 
+            estado, precio, precio_min, autoImgUrl
+            ) 
+            VALUES (
+            :marca, :modelo, :anio, :registro, 
+            :estado, :precio, :precio_min, :autoImgUrl
             );';
-            return self::executeNonQuery($sqlstr,  $auto);
+        return self::executeNonQuery($sqlstr, $auto);
+
     }
 
     public static function actualizarAuto($auto){

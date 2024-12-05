@@ -79,12 +79,12 @@ class AutosForm extends PublicController
 
     private function generarViewData()
     {
-        $this->viewData["mode"] = $this->mode;
         $this->viewData["modes_dsc"] = sprintf(
             $this->modeArr[$this->mode],
             $this->auto["marca"],
             $this->auto["id_auto"]
         );
+        $this->viewData["mode"] = $this->mode;
         $this->viewData["auto"] = $this->auto;
         $this->viewData["readonly"] =
             ($this->viewData["mode"] === 'DEL'

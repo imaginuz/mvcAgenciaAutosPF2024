@@ -1,6 +1,6 @@
 <section class="grid">
     <section class="row">
-        <h2 class="col-12 col-m-6 offset-m-3 depth-1 p-4">{{modeArr}}</h2>
+        <h2 class="col-12 col-m-6 offset-m-3 depth-1 p-4">{{modes_dsc}}</h2>
     </section>
 </section>
 <section class="grid">
@@ -9,12 +9,6 @@
         <input type="hidden" name="id_auto" value="{{id_auto}}">
         <input type="hidden" name="xssToken" value="{{~xssToken}}">
         <input type="hidden" name="mode" value="{{mode}}">
-        
-        <div class="row my-4">
-            <label class="col-4" for="id_auto">Código Auto:</label>
-            <input class="col-8" type="text" name="id_auto" id="id_auto" value="{{id_auto}}" required {{isReadOnly}}>
-        </div>
-
         <div class="row my-4">
             <label class="col-4" for="marca">Marca:</label>
             <input class="col-8" type="text" name="marca" id="marca" value="{{marca}}" required {{isReadOnly}}>
@@ -138,6 +132,11 @@
                 <i class="fa-solid fa-xmark"></i>
                 Cancelar
             </button>
+        </div>
+        <div class="row col-6 offset-3 flex-end">
+            {{if ~showConfirm}}
+                <button type="submit" class="primary">Confirmar</button>&nbsp;
+            {{endif ~showConfirm}}
         </div>
     </form>
     </section>

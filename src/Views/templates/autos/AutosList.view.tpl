@@ -2,7 +2,7 @@
     <section class="depth-1 px-4 py-4">
         <h2>Lista de Autos</h2>
         <section class="grid">
-            <form action="index.php?page=Autos-AutosList" method="post" class="row">
+            <form action="index.php?page=Autos-Autos" method="post" class="row">
                 <input class="col-8" type="text" name="search" placeholder="Buscar por descripcion" value="{{search}}">
                 <button class="col-4" type="submit"><i class="fa-solid fa-magnifying-glass"></i> &nbsp;Buscar</button>
             </form>
@@ -30,7 +30,13 @@
                 <tr>
                     <td>{{id_auto}}</td>
                     <td><a href="index.php?page=Autos-AutosForm&mode=DSP&id_auto={{id_auto}}"><i class="fa-solid fa-eye"></i> &nbsp;{{marca}}</a></td>
+                    <td>{{modelo}}</td>
+                    <td>{{anio}}</td>
+                    <td>{{registro}}</td>
                     <td>{{estado}}</td>
+                    <td>{{precio}}</td>
+                    <td>{{precio_min}}</td>
+                    <td>{{autoImgUrl}}</td>
                     <td class="center">
                         <a href="index.php?page=Autos-AutosForm&mode=UPD&id_auto={{id_auto}}">
                             <i class="fa-solid fa-pen"></i> &nbsp; Editar

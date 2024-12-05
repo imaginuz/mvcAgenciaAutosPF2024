@@ -2,11 +2,11 @@
 
 namespace Controllers\Checkout;
 
-use Controllers\PublicController;
+use Controllers\PrivateController;
 use Dao\Carrito\Carrito;
 use Dao\Autos\Autos;
 
-class Checkout extends PublicController
+class Checkout extends PrivateController
 {
     public function run(): void
     {

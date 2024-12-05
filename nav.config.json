@@ -9,6 +9,11 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=Sec_Register",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Crear Cuenta"
+    },
+    {
+      "id": "Menu_Tienda",
+      "nav_url": "index.php?page=Tienda_TiendaPage",
+      "nav_label":"<i class=\"fa-solid fa-store\"></i>&nbsp;Catalogo de Autos"
     }
   ],
   "private": [
@@ -16,6 +21,11 @@
       "id":"Menu_PaymentCheckout",
       "nav_url": "index.php?page=Checkout_Checkout",
       "nav_label": "Carretilla de Compra"
+    },
+    {
+      "id":"Autos_Lista",
+      "nav_url": "index.php?page=Autos_AutosList",
+      "nav_label": "Lista de Autos"
     }
   ]
 }

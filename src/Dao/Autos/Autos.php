@@ -38,7 +38,6 @@ class Autos extends Table{
        
         $sqlstr = "update autos set  marca = :marca, modelo = :modelo, anio = :anio, 
             registro = :registro, estado = :estado, precio = :precio, precio_min = :precio_min, 
-            cilindraje = :cilindraje, notas = :notas, rodaje = :rodaje, estado = :estado,
             autoImgUrl = :autoImgUrl where id_auto = :id_auto;";
             return self::executeNonQuery($sqlstr, $auto);
         }

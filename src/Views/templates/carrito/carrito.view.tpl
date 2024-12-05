@@ -1,6 +1,6 @@
 <section class="container-l WWList">
     <section class="depth-1 px-4 py-4">
-        <h2>Lista de Compra</h2>
+        <h2>Lista de Autos</h2>
         <section class="grid">
             <form action="index.php?page=Carrito-CarritoList" method="post" class="row">
             </form>
@@ -25,8 +25,8 @@
                     <td>{{marca}} {{modelo}}</td>
                     <td><img src="{{imagen_auto}}" alt="Imagen del auto" style="width: 50px;"></td>
                     <td>{{cantidad}}</td>
-                    <td>LP.{{precio_auto}}</td>
-                    <td>LP.{{precio_total}}</td>
+                    <td>${{precio_auto}}</td>
+                    <td>${{precio_total}}</td>
                     <td>{{fecha_agregado}}</td>
                     <td>{{estado}}</td>
                     <td class="center">
@@ -43,8 +43,14 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="8">Total a pagar: LP. {{total}}</td>
+                <td colspan="8">Total a pagar: ${{total}}</td>
             </tr>
         </tfoot>
     </table>
+    <!-- Botón para realizar la compra -->
+    <div class="text-center mt-4">
+        <a href="index.php?page=Carrito-CarritoPagar" class="btn btn-primary">
+            <i class="fa-solid fa-credit-card"></i> &nbsp; Realizar la compra
+        </a>
+    </div>
 </section>

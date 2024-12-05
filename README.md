@@ -11,13 +11,6 @@ Visualizar vehículos disponibles:
 Implementación de vistas específicas para listar y detallar la información de los autos registrados en el sistema.
 Modos de uso flexibles:
 
-Soporte para diferentes modos de interacción como:
-Ver: Campos en modo de solo lectura para consulta.
-Editar/Crear: Formularios interactivos para modificar o ingresar datos.
-Validación y control de errores:
-
-Mecanismos de validación que informan al usuario sobre errores específicos, como campos obligatorios o datos inconsistentes.
-
 Integrantes Grupo #4
 
 0801200318612 ARNOLD LOED MENA MOREIRA

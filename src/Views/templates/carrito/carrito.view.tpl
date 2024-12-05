@@ -1,6 +1,6 @@
 <section class="container-l WWList">
     <section class="depth-1 px-4 py-4">
-        <h2>Lista de Autos</h2>
+        <h2>Lista de Compra</h2>
         <section class="grid">
             <form action="index.php?page=Carrito-CarritoList" method="post" class="row">
             </form>

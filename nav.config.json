@@ -41,6 +41,11 @@
       "id":"Menu_Autos",
       "nav_url": "index.php?page=Autos_AutosList",
       "nav_label": "Lista de Autos"
+    },
+    {
+      "id":"Menu_Usuarios",
+      "nav_url": "index.php?page=Usuarios_UsuariosList",
+      "nav_label": "Lista de Usuarios"
     }
   ]
 }

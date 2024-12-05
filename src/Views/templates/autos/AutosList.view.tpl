@@ -36,7 +36,9 @@
                     <td>{{estado}}</td>
                     <td>{{precio}}</td>
                     <td>{{precio_min}}</td>
-                    <td>{{autoImgUrl}}</td>
+                    <td>
+                        <img src="{{autoImgUrl}}" alt="Imagen del auto" style="width: 100px; height: auto;">
+                    </td>
                     <td class="center">
                         <a href="index.php?page=Autos-AutosForm&mode=UPD&id_auto={{id_auto}}">
                             <i class="fa-solid fa-pen"></i> &nbsp; Editar

@@ -2,6 +2,7 @@
 
 namespace Controllers\Sec;
 
+use Controller\Error;
 use Controllers\PublicController;
 use \Utilities\Validators;
 use Exception;
@@ -9,8 +10,10 @@ use Exception;
 class Register extends PublicController
 {
     private $txtEmail = "";
+    private $txtUsuario = "";
     private $txtPswd = "";
     private $errorEmail ="";
+    private $errorUsuario ="";
     private $errorPswd = "";
     private $hasErrors = false;
     public function run() :void
@@ -18,10 +21,15 @@ class Register extends PublicController
 
         if ($this->isPostBack()) {
             $this->txtEmail = $_POST["txtEmail"];
+            $this->txtUsuario = $_POST["txtUsuario"];
             $this->txtPswd = $_POST["txtPswd"];
             //validaciones
             if (!(Validators::IsValidEmail($this->txtEmail))) {
                 $this->errorEmail = "El correo no tiene el formato adecuado";
+                $this->hasErrors = true;
+            }
+            if (Validators::IsEmpty($this->txtUsuario)) {
+                $this->errorUsuario = "No debe dejar el usuario vacio.";
                 $this->hasErrors = true;
             }
             if (!Validators::IsValidPassword($this->txtPswd)) {
@@ -31,7 +39,7 @@ class Register extends PublicController
 
             if (!$this->hasErrors) {
                 try{
-                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtPswd)) {
+                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtUsuario ,$this->txtPswd)) {
                         \Utilities\Site::redirectToWithMsg("index.php?page=sec_login", "¡Usuario Registrado Satisfactoriamente!");
                     }
                 } catch (Error $ex){

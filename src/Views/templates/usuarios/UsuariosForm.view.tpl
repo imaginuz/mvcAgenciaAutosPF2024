@@ -110,6 +110,34 @@
                 {{endif ~usertipo_haserror}}
             </div>
 
+            <div class="row my-4">
+                <label class="col-4" for="useractcod">Código de Activación:</label>
+                <input class="col-8" type="text" name="useractcod" id="useractcod" value="{{useractcod}}">
+                {{if ~useractcod_haserror}}
+                    <div class="error">
+                        <ul>
+                            {{foreach ~useractcod_error}}
+                                <li>{{this}}</li>
+                            {{endfor ~useractcod_error}}
+                        </ul>
+                    </div>
+                {{endif ~useractcod_haserror}}
+            </div>
+
+            <div class="row my-4">
+                <label class="col-4" for="userpswdchg">Fecha de Cambio de Contraseña:</label>
+                <input class="col-8" type="datetime-local" name="userpswdchg" id="userpswdchg" value="{{userpswdchg}}">
+                {{if ~userpswdchg_haserror}}
+                    <div class="error">
+                        <ul>
+                            {{foreach ~userpswdchg_error}}
+                                <li>{{this}}</li>
+                            {{endfor ~userpswdchg_error}}
+                        </ul>
+                    </div>
+                {{endif ~userpswdchg_haserror}}
+            </div>
+
             <div class="row flex-end">
                 {{ifnot isDisplay}}
                     <button type="submit" class="primary mx-2">

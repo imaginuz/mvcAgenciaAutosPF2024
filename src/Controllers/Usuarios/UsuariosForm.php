@@ -148,28 +148,32 @@ class UsuariosForm extends PrivateController
     }
 
     private function procesarAccion()
-    {
-        switch ($this->mode) {
-            case 'INS':
-                $result = Usuarios::agregarUsuario($this->usuario);
-                if ($result) {
-                    Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario registrado satisfactoriamente");
-                }
-                break;
-            case 'UPD':
-                $result = Usuarios::actualizarUsuario($this->usuario);
-                if ($result) {
-                    Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario actualizado satisfactoriamente");
-                }
-                break;
-            case 'DEL':
-                $result = Usuarios::eliminarUsuario($this->usuario['usercod']);
-                if ($result) {
-                    Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario eliminado satisfactoriamente");
-                }
-                break;
-        }
+{
+    switch ($this->mode) {
+        case 'INS':
+            $result = Usuarios::agregarUsuario($this->usuario);
+            if ($result) {
+                Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario registrado satisfactoriamente");
+            }
+            break;
+        case 'UPD':
+            $result = Usuarios::actualizarUsuario($this->usuario);
+            if ($result) {
+                Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario actualizado satisfactoriamente");
+            } else {
+                // Aquí puedes hacer un log o un mensaje de error adicional para depurar
+                Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Hubo un error al actualizar el usuario");
+            }
+            break;
+        case 'DEL':
+            $result = Usuarios::eliminarUsuario($this->usuario['usercod']);
+            if ($result) {
+                Site::redirectToWithMsg("index.php?page=Usuarios-UsuariosList", "Usuario eliminado satisfactoriamente");
+            }
+            break;
     }
+}
+
 
     private function generateAntiXSSToken()
     {

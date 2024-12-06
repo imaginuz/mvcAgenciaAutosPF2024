@@ -21,6 +21,7 @@ class Usuarios extends Table {
     public static function agregarUsuario($usuario)
     {
         unset($usuario['usercod']);
+        $rolecod = '';
         $sqlstr = 'INSERT INTO usuario (
             useremail, username, userpswd, userfching, 
             userpswdest, userpswdexp, userest, useractcod, 
@@ -30,7 +31,33 @@ class Usuarios extends Table {
             :userpswdest, :userpswdexp, :userest, :useractcod, 
             :userpswdchg, :usertipo
         );';
-        return self::executeNonQuery($sqlstr, $usuario);
+        switch($usuario['usertipo']){
+            case 'PBL':
+                $rolecod = 'Publico';
+                break;
+            case 'ADM';
+                $rolecod = 'Admin';
+                break;
+            default:
+                $rolecod = 'Publico';
+                break;
+        }
+        $sqlstrRolUsuario = 'INSERT INTO roles_usuarios (
+            usercod, rolescod, roleuserest, roleuserfch, roleuserexp
+        ) VALUES (
+            :usercod, :rolescod, :roleuserest, :roleuserfch, :roleuserexp
+        );';
+        $fechaActual = new \DateTime();
+        $fechaExpiracion = $fechaActual->modify('+1 year')->format('Y-m-d H:i:s');
+        $parametrosRolUsuario = [
+            'usercod' => $usuario['usercod'],
+            'rolescod' => $rolecod,
+            'roleuserest' => 'ACT',
+            'roleuserfch' => (new \DateTime())->format('Y-m-d H:i:s'),
+            'roleuserexp' => $fechaExpiracion
+        ];
+        return self::executeNonQuery($sqlstrRolUsuario, $parametrosRolUsuario , $usuario);
+
     }
 
     public static function actualizarUsuario($usuario)

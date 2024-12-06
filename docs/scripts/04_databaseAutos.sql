@@ -118,3 +118,86 @@ CREATE TABLE carrito (
     estado ENUM('pendiente', 'comprado') DEFAULT 'pendiente',
     FOREIGN KEY (id_auto) REFERENCES autos(id_auto)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO autos (marca, modelo, anio, registro, estado, precio, precio_min, autoImgUrl) 
+VALUES
+ ('Nissan', 'Altima', 2021, 'MNO123456', 'nuevo', 27000.00, 25000.00, 'https://hips.hearstapps.com/hmg-prod/images/2021-nissan-altima-mmp-1-1603227990.jpg?crop=0.845xw:0.714xh;0.0849xw,0.212xh&resize=1200:*'),
+    ('Hyundai', 'Elantra', 2020, 'PQR789101', 'usado', 19000.00, 17000.00, 'https://fuelcarmagazine.com/wp-content/uploads/2021/07/%C2%A9-Hyundai-696x365.jpg'),
+    ('Kia', 'Sportage', 2022, 'STU456789', 'nuevo', 30000.00, 28000.00, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2021/11/kia-sportage-2022-2539817.jpg?tf=1200x'),
+    ('Audi', 'A4', 2022, 'BCD667788', 'nuevo', 42000.00, 40000.00, 'https://hips.hearstapps.com/hmg-prod/images/2022-audi-a4-mmp-1-1621027611.jpg?crop=0.795xw:0.671xh;0.0849xw,0.178xh&resize=1200:*'),
+    
+    ('Subaru', 'Outback', 2020, 'HIJ556677', 'usado', 22000.00, 20000.00, 'https://hips.hearstapps.com/hmg-prod/images/2020-subaru-outback-touring-2p5l-103-1578936312.jpg?crop=0.757xw:0.694xh;0.0472xw,0.306xh&resize=2048:*')
+
+INSERT INTO roles (rolescod, rolesdsc, rolesest) VALUES
+('Publico', 'Para los que se registran de manera natural en la página', 'ACT'),
+('Auditor', 'Para los empleados', 'ACT'),
+('Admin', 'Para los administradores', 'ACT');
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) VALUES
+('Menu_Usuarios', 'Menú de usuarios - Acceso exclusivo para Administradores y Auditores', 'ACT', 'MNU'),
+('usuarios_INS_enabled', 'Función para habilitar inserción de usuarios - Solo para Administradores', 'ACT', 'SEC'),
+('usuarios_UPD_enabled', 'Función para habilitar actualización de usuarios - Solo para Administradores', 'ACT', 'SEC'),
+('usuarios_DEL_enabled', 'Función para habilitar eliminación de usuarios - Solo para Administradores', 'ACT', 'SEC');
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) VALUES
+('Menu_Tienda', 'Acceso al menú de la tienda', 'ACT', 'GEN'),
+('Menu_Carrito', 'Acceso al carrito de compras', 'ACT', 'GEN'),
+('Menu_PaymentCheckout', 'Acceso al proceso de pago', 'ACT', 'GEN'),
+('Menu_Autos', 'Acceso al menú de gestión de autos', 'ACT', 'ADM');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) VALUES
+('Publico', 'Menu_Tienda', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Publico', 'Menu_Carrito', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Publico', 'Menu_PaymentCheckout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'Menu_Tienda', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'Menu_Carrito', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'Menu_PaymentCheckout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'Menu_Autos', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) VALUES
+('Auditor', 'Menu_Tienda', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Auditor', 'Menu_Carrito', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Auditor', 'Menu_PaymentCheckout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) VALUES
+('Controllers\\Autos\\AutosList', 'Acceso a la lista de autos en el controlador', 'ACT', 'CTR');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) VALUES
+('Admin', 'Controllers\\Autos\\AutosList', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) 
+VALUES ('Controllers\\Checkout\\Checkout', 'Acceso al controlador de Checkout', 'ACT', 'CTR');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) 
+VALUES 
+('Publico', 'Controllers\\Checkout\\Checkout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Auditor', 'Controllers\\Checkout\\Checkout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'Controllers\\Checkout\\Checkout', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) 
+VALUES ('Controllers\\Autos\\AutosForm', 'Acceso al formulario de autos en el controlador', 'ACT', 'CTR');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) 
+VALUES ('Auditor', 'Controllers\\Autos\\AutosForm', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) 
+VALUES 
+('autos_INS_enabled', 'Permite insertar autos', 'ACT', 'CTR'),
+('autos_UPD_enabled', 'Permite actualizar autos', 'ACT', 'CTR'),
+('autos_DEL_enabled', 'Permite eliminar autos', 'ACT', 'CTR');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) 
+VALUES 
+('Admin', 'autos_INS_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'autos_UPD_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'autos_DEL_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest, fnexp) VALUES
+('Admin', 'Menu_Usuarios', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'usuarios_INS_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'usuarios_UPD_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Admin', 'usuarios_DEL_enabled', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR)),
+('Auditor', 'Menu_Usuarios', 'ACT', DATE_ADD(NOW(), INTERVAL 1 YEAR));
+
+
+
